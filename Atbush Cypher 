@@ -1,0 +1,18 @@
+def atbash_cipher(message):
+    result = ''
+    for char in message:
+        if char.isupper():
+            result += chr(90 - (ord(char) - 65))  # A=65, Z=90
+        elif char.islower():
+            result += chr(122 - (ord(char) - 97))  # a=97, z=122
+        else:
+            result += char
+    return result
+
+message = 'Hello World!'
+encrypted = atbash_cipher(message)
+decrypted = atbash_cipher(encrypted)
+
+print("Message: ", message)
+print("Encrypted: ", encrypted)
+print("Decrypted: ", decrypted)
